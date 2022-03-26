@@ -1,38 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Infinicinnio | <%= title %></title>
-   </head>
-   <body>
-      <nav>
-         <div class="set-title">
-            <a href="/"><h1>Infinicinnio</h1></a>
-            <p>A Blog Site</p>
-         </div>
-         <ul>
-            <li><a href="/">Blogs</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blogs/create">New Blog</a></li>
-         </ul>
-      </nav>
+	<%- include('./partials/head.ejs') %>
+	<body>
+		<%- include('./partials/nav.ejs') %>
 
-      <div class="blogs content">
-         <h2>All Blogs</h2>
+		<div class="blogs content">
+			<h2>All Blogs</h2>
 
-         <!-- prettier-ignore -->
-         <% if (blogs.length > 0) {%>
-         <!-- prettier-ignore -->
-         <% blogs.forEach((blog) => { %>
-         <!-- prettier-ignore -->
-         <h3 class="title"><%= blog.title %></h3>
-         <p class="snippet"><%= blog.snippet %></p>
-         <!-- prettier-ignore -->
-         <% }) %>
-         <!-- prettier-ignore -->
-         <% } %>
-      </div>
-   </body>
+			<!-- prettier-ignore -->
+			<% if (blogs.length > 0) {%>
+			<!-- prettier-ignore -->
+			<% blogs.forEach((blog) => { %>
+			<!-- prettier-ignore -->
+			<h3 class="title"><%= blog.title %></h3>
+			<p class="snippet"><%= blog.snippet %></p>
+			<!-- prettier-ignore -->
+			<% }) %>
+			<!-- prettier-ignore -->
+			<% } else { %>
+			<p>there are no blogs to display</p>
+			<% } %>
+		</div>
+		<%- include('./partials/footer.ejs') %>
+	</body>
 </html>
