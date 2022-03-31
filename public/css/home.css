@@ -1,17 +1,17 @@
 .content {
-	margin-top: 40px;
+   margin-top: 40px;
 }
 
 .content .blogs {
-	margin-top: 30px;
+   margin-top: 30px;
 }
 
 .content .blog {
-	margin-top: 10px;
+   margin-top: 10px;
 }
 
 .content .no-blog-p {
-	margin-top: 15px;
-	color: red;
-	font-weight: bold;
+   margin-top: 15px;
+   color: var(--red-color);
+   font-weight: bold;
 }
