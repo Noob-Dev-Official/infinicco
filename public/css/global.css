@@ -1,14 +1,19 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
 }
 
 body {
-	background-color: #dddddd;
-	font-family: sans-serif;
+   background-color: #dddddd;
+   font-family: sans-serif;
 }
 
 .layout {
-	margin: 0 150px;
+   margin: 0 150px;
+}
+
+/* 404 error page */
+.not-found {
+   color: red;
 }
