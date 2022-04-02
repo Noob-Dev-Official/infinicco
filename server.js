@@ -53,9 +53,13 @@ app.post('/blogs', (req, res) => {
 app.get('/blogs/:id', (req, res) => {
 	const id = req.params.id;
 
-	Blog.findById(id).then((result) => {
-		res.render('single-blog', { title: 'Blog', blog: result });
-	});
+	Blog.findById(id)
+		.then((result) => {
+			res.render('single-blog', { title: 'Blog', blog: result });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 });
 
 /* webpages */
