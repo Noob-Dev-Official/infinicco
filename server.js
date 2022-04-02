@@ -68,11 +68,20 @@ app.get('/single-blog', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-	res.render('index', { title: 'Home', blogs });
+	res.redirect('/blogs');
 });
 
 app.get('/about', (req, res) => {
 	res.render('about', { title: 'About' });
+});
+
+app.get('/blogs', (req, res) => {
+	Blog.find()
+		.sort({ createdAt: -1 })
+		.then((result) => {
+			res.render('index', { title: 'All Blogs', blogs: result });
+		})
+		.catch((err) => console.log(err));
 });
 
 app.get('/blogs/create', (req, res) => {
