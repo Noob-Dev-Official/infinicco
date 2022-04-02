@@ -1,17 +1,27 @@
 .content {
-   margin-top: 40px;
+	margin-top: 40px;
 }
 
 .content .blogs {
-   margin-top: 30px;
+	margin-top: 30px;
+}
+
+.content .blogs .blog-link {
+	color: var(--black-color);
+	text-decoration: none;
+}
+
+.content .blogs .blog-link:visited {
+	color: var(--black-color);
+	text-decoration: none;
 }
 
 .content .blog {
-   margin-top: 10px;
+	margin-top: 10px;
 }
 
 .content .no-blog-p {
-   margin-top: 15px;
-   color: var(--red-color);
-   font-weight: bold;
+	margin-top: 15px;
+	color: var(--red-color);
+	font-weight: bold;
 }

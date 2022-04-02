@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 const Blog = require('./models/blogs');
+const { render } = require('express/lib/response');
 
 const dbURI =
 	'mongodb+srv://mz10ah:mz10ah2000@infinicco-cluster.zcno3.mongodb.net/infinicco?retryWrites=true&w=majority';
@@ -29,38 +30,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-// mongoose and mongo sandbox routes
-// app.get('/add-blog', (req, res) => {
-// 	const blog = new Blog({
-// 		title: 'New blog',
-// 		snippet: 'about my new blog',
-// 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta voluptas exercitationem beatae ab commodi cumque rem reiciendis fugiat quam architecto.',
-// 	});
-
-// 	blog
-// 		.save()
-// 		.then((result) => {
-// 			res.send(result);
-// 		})
-// 		.catch((err) => {
-// 			console.log(err);
-// 		});
-// });
-
-app.get('/all-blogs', (req, res) => {
-	Blog.find()
-		.then((result) => {
-			res.send(result);
-		})
-		.catch((err) => console.log(err));
-});
-
-app.get('/single-blog', (req, res) => {
-	Blog.findById('6248388ae1a7266c4e51912a')
-		.then((result) => res.send(result))
-		.catch((err) => console.log(err));
-});
-
 /* api routes */
 app.post('/blogs', (req, res) => {
 	console.log(req.body);
@@ -79,6 +48,14 @@ app.post('/blogs', (req, res) => {
 		.catch((err) => {
 			console.log(err);
 		});
+});
+
+app.get('/blogs/:id', (req, res) => {
+	const id = req.params.id;
+
+	Blog.findById(id).then((result) => {
+		res.render('single-blog', { title: 'Blog', blog: result });
+	});
 });
 
 /* webpages */

@@ -1,29 +1,31 @@
 :root {
-   --primary-color: #0f4c75;
-   --white-color: #fff;
-   --secondary-color: #1b262c;
-   --tertiary-color: #bbe1fa;
-   --red-color: #cc0000;
-   --primary-hover-color: #0d4469;
-   --primary-font-family: sans-serif;
+	--primary-color: #0f4c75;
+	--white-color: #fff;
+	--secondary-color: #1b262c;
+	--tertiary-color: #bbe1fa;
+	--red-color: #cc0000;
+	--primary-hover-color: #0d4469;
+	--primary-font-family: sans-serif;
+	--black-color: #1e1e1e;
+	--grey-color: #4a4a4a;
 }
 
 * {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-   background-color: #dddddd;
-   font-family: var(--primary-font-family);
+	background-color: #dddddd;
+	font-family: var(--primary-font-family);
 }
 
 .layout {
-   margin: 0 150px;
+	margin: 0 150px;
 }
 
 /* 404 error page */
 .not-found {
-   color: var(--red-color);
+	color: var(--red-color);
 }
