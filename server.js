@@ -4,12 +4,6 @@ const mongoose = require('mongoose');
 
 const Blog = require('./models/blogs');
 
-const blogs = [
-	{ title: 'hello', snippet: 'klasfklasasjkllka' },
-	{ title: 'bye', snippet: 'klasfklasasjkllka' },
-	{ title: 'hey', snippet: 'klasfklasasjkllka' },
-];
-
 const dbURI =
 	'mongodb+srv://mz10ah:mz10ah2000@infinicco-cluster.zcno3.mongodb.net/infinicco?retryWrites=true&w=majority';
 mongoose
@@ -32,26 +26,26 @@ app.set('view engine', 'ejs');
 
 // static files
 app.use(express.static(__dirname + '/public'));
-
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 // mongoose and mongo sandbox routes
-app.get('/add-blog', (req, res) => {
-	const blog = new Blog({
-		title: 'New blog',
-		snippet: 'about my new blog',
-		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta voluptas exercitationem beatae ab commodi cumque rem reiciendis fugiat quam architecto.',
-	});
+// app.get('/add-blog', (req, res) => {
+// 	const blog = new Blog({
+// 		title: 'New blog',
+// 		snippet: 'about my new blog',
+// 		body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta voluptas exercitationem beatae ab commodi cumque rem reiciendis fugiat quam architecto.',
+// 	});
 
-	blog
-		.save()
-		.then((result) => {
-			res.send(result);
-		})
-		.catch((err) => {
-			console.log(err);
-		});
-});
+// 	blog
+// 		.save()
+// 		.then((result) => {
+// 			res.send(result);
+// 		})
+// 		.catch((err) => {
+// 			console.log(err);
+// 		});
+// });
 
 app.get('/all-blogs', (req, res) => {
 	Blog.find()
@@ -67,6 +61,27 @@ app.get('/single-blog', (req, res) => {
 		.catch((err) => console.log(err));
 });
 
+/* api routes */
+app.post('/blogs', (req, res) => {
+	console.log(req.body);
+
+	const blog = new Blog({
+		title: req.body.title,
+		snippet: req.body.snippet,
+		body: req.body.body,
+	});
+
+	blog
+		.save()
+		.then((result) => {
+			res.redirect('/blogs');
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+});
+
+/* webpages */
 app.get('/', (req, res) => {
 	res.redirect('/blogs');
 });
