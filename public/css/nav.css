@@ -1,57 +1,59 @@
 .nav {
-   display: flex;
-   justify-content: space-between;
-   flex-direction: column;
-   align-items: center;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
 }
 
 .nav a {
-   text-decoration: none;
+	text-decoration: none;
+	color: var(--white-color);
 }
 
 .nav a:visited {
-   text-decoration: none;
+	text-decoration: none;
+	color: var(--white-color);
 }
 
 .nav .set-title {
-   text-align: center;
-   width: 100%;
-   background-color: var(--primary-color);
-   padding: 30px 0;
-   font-family: 'Oswald', var(--primary-font-family);
+	text-align: center;
+	width: 100%;
+	background-color: var(--primary-color);
+	padding: 30px 0;
+	font-family: 'Oswald', var(--primary-font-family);
 }
 
 .nav .set-title a {
-   font-size: 2rem;
+	font-size: 2rem;
 }
 
 .nav .set-title a:visited {
-   color: var(--white-color);
+	color: var(--white-color);
 }
 
 .nav .set-title p {
-   color: var(--tertiary-color);
+	color: var(--tertiary-color);
 }
 
 .nav ul {
-   display: flex;
-   list-style: none;
-   justify-content: center;
-   background-color: var(--secondary-color);
-   width: 100%;
-   padding: 25px;
-   color: var(--white-color);
-   font-family: var(--primary-font-family);
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	background-color: var(--secondary-color);
+	width: 100%;
+	padding: 25px;
+	color: var(--white-color);
+	font-family: var(--primary-font-family);
 }
 
 .nav ul a:visited {
-   color: var(--white-color);
+	color: var(--white-color);
 }
 
 .nav ul a:hover {
-   text-decoration: underline;
+	text-decoration: underline;
 }
 
 .nav ul li {
-   padding: 0 15px;
+	padding: 0 15px;
 }

@@ -4,7 +4,8 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 const Blog = require('./models/blogs');
-const { render } = require('express/lib/response');
+
+console.log(typeof process.env.DB_URI);
 
 mongoose
 	.connect(process.env.DB_URI, {
@@ -81,7 +82,7 @@ app.get('/blogs', (req, res) => {
 		.catch((err) => console.log(err));
 });
 
-app.get('/blogs/create', (req, res) => {
+app.get('/create', (req, res) => {
 	res.render('create-blog', { title: 'Create Blog' });
 });
 
