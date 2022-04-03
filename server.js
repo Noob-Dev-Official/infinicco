@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -5,15 +6,15 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blogs');
 const { render } = require('express/lib/response');
 
-const dbURI =
-	'mongodb+srv://mz10ah:mz10ah2000@infinicco-cluster.zcno3.mongodb.net/infinicco?retryWrites=true&w=majority';
 mongoose
-	.connect(dbURI, { useNewURLParser: true, useUnifiedTopology: true })
+	.connect(process.env.DB_URI, {
+		useNewURLParser: true,
+		useUnifiedTopology: true,
+	})
 	.then((result) => {
 		// listen for requests
-		app.listen(3000, 'localhost', () => {
-			console.log('Im upp!!');
-		});
+		app.listen(3000);
+		console.log('I am up');
 	})
 	.catch((err) => {
 		console.log(err);
