@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-	<%- include('./partials/head.ejs') %>
-	<body>
-		<%- include('./partials/nav.ejs') %>
+   <%- include('./partials/head.ejs') %>
+   <body>
+      <%- include('./partials/nav.ejs') %>
 
-		<div class="content layout">
-			<h2 class="home-title">All Blogs</h2>
+      <div class="content layout">
+         <h1 class="home-title">All Blogs</h1>
 
-			<div class="blogs">
-				<!-- prettier-ignore -->
-				<% if (blogs.length > 0) {%>
-				<!-- prettier-ignore -->
-				<% blogs.forEach((blog) => { %>
-				<a class="blog-link" href="/blogs/<%= blog._id %> ">
-					<div class="blog">
-						<h3 class="title"><%= blog.title %></h3>
-						<p class="snippet"><%= blog.snippet %></p>
-					</div>
-				</a>
-				<!-- prettier-ignore -->
-				<% }) %>
-				<!-- prettier-ignore -->
-				<% } else { %>
-				<p class="no-blog-p">there are no blogs to display</p>
-				<% } %>
-			</div>
-		</div>
-		<%- include('./partials/footer.ejs') %>
-	</body>
+         <div class="blogs">
+            <!-- prettier-ignore -->
+            <% if (blogs.length > 0) {%>
+            <!-- prettier-ignore -->
+            <% blogs.forEach((blog) => { %>
+            <a class="blog-link" href="/blogs/<%= blog._id %> ">
+               <div class="blog">
+                  <h3 class="title"><%= blog.title %></h3>
+                  <p class="snippet"><%= blog.snippet %></p>
+               </div>
+            </a>
+            <!-- prettier-ignore -->
+            <% }) %>
+            <!-- prettier-ignore -->
+            <% } else { %>
+            <p class="no-blog-p">there are no blogs to display</p>
+            <% } %>
+         </div>
+      </div>
+      <%- include('./partials/footer.ejs') %>
+   </body>
 </html>
