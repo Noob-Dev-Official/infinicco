@@ -1,0 +1,15 @@
+.about-title {
+	color: var(--primary-color);
+}
+
+.about-us-content {
+	margin-top: 15px;
+}
+
+.about-us-content p {
+	padding: 3px 0;
+}
+
+.about-us-content .para {
+	margin-bottom: 18px;
+}
