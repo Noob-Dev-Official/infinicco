@@ -35,6 +35,7 @@
 
 .content .blog p {
 	margin-top: 5px;
+	color: var(--grey-color);
 }
 
 /* blog hover effect */
