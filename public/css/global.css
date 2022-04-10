@@ -27,7 +27,8 @@ body {
 
 p {
 	font-size: 1.1rem;
-	white-space: normal;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 /* 404 error page */
