@@ -57,3 +57,16 @@
 .nav ul li {
 	padding: 0 15px;
 }
+
+@media screen and (max-width: 425px) {
+	.nav ul {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.nav ul li {
+		padding: 10px 0;
+	}
+}
